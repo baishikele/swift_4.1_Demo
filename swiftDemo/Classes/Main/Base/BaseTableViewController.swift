@@ -13,8 +13,20 @@ class BaseTableViewController: UITableViewController {
     var isLogin = false
     var vistorView = noLoginView.noLoginView()
     
-    override func loadView() {
+
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupUIs()
+    }
+
+}
+
+extension BaseTableViewController {
+    
+    override func loadView() {
+        
         isLogin == false ? createNoLoginView() : super.loadView()
     }
     
@@ -22,14 +34,21 @@ class BaseTableViewController: UITableViewController {
         view = vistorView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setupUIs() -> () {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(registClick(_:)))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(loginClick(_:)))
+        
+        vistorView.registerBtn.addTarget(self, action: #selector(registClick(_:)), for: .touchUpInside)
+        vistorView.loginBtn.addTarget(self, action: #selector(loginClick(_:)), for: .touchUpInside)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @objc func registClick(_ btn: UIBarButtonItem) -> () {
+        print("点击注册")
+    }
+    
+    @objc func loginClick(_ btn: UIBarButtonItem) -> () {
+        print("点击登录")
+    }
 }

@@ -93,6 +93,7 @@ class MainViewController: UITabBarController {
             }
             
             let nav = UINavigationController(rootViewController: chiledVc)
+            nav.navigationBar.tintColor = UIColor.orange
             chiledVc.navigationItem.title = title
             //3.添加到自控制器
             addChildViewController(nav)

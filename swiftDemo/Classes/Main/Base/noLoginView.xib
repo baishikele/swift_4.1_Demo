@@ -86,6 +86,8 @@
             <connections>
                 <outlet property="animationView" destination="2Vw-mR-lN4" id="OaK-rz-a41"/>
                 <outlet property="iconView" destination="a3E-Oe-MNj" id="Stm-cM-QXV"/>
+                <outlet property="loginBtn" destination="e7q-CJ-SFE" id="kaR-A8-nFB"/>
+                <outlet property="registerBtn" destination="SyO-gg-iUD" id="SrZ-mg-GlP"/>
                 <outlet property="tips" destination="NeD-0F-Nzc" id="Fei-TJ-FSl"/>
             </connections>
         </view>

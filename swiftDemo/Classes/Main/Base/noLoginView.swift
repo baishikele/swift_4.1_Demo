@@ -20,6 +20,8 @@ class noLoginView: UIView {
     @IBOutlet weak var animationView: UIImageView!
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var tips: UILabel!
+    @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
     
     class func noLoginView()->noLoginView {
        return Bundle.main.loadNibNamed("noLoginView", owner: nil, options: nil)?.last as! noLoginView
@@ -39,7 +41,7 @@ class noLoginView: UIView {
         ani.toValue = M_PI*2
         ani.repeatCount = MAXFLOAT
         ani.duration = 5
-        ani.isRemovedOnCompletion = true
+        ani.isRemovedOnCompletion = false
         animationView.layer.add(ani, forKey: nil)
     }
 }
