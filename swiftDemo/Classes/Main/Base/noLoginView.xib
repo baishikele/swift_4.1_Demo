@@ -83,6 +83,11 @@
                 <constraint firstItem="2Vw-mR-lN4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-80" id="zO8-Jc-1Gy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="animationView" destination="2Vw-mR-lN4" id="OaK-rz-a41"/>
+                <outlet property="iconView" destination="a3E-Oe-MNj" id="Stm-cM-QXV"/>
+                <outlet property="tips" destination="NeD-0F-Nzc" id="Fei-TJ-FSl"/>
+            </connections>
         </view>
     </objects>
     <resources>
