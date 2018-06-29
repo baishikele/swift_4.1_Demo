@@ -9,32 +9,18 @@
 import UIKit
 
 class MainViewController: UITabBarController {
-
+    
+    lazy var composeBtn: UIButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-//  大旗面试题
-//        var total = 0
-//        let arr = [[1,2,3],[1,2,3],[1,2,3]]
-//
-//        for i in 0..<arr.count{
-//
-//            let sub = arr[i];
-//
-//            for j in 0..<sub.count{
-//
-//                let a = sub[j]
-//                total += a
-//            }
-//        }
-//        print(total)
-
+        
         addChildViewControllers()
     }
     
     func addChildViewControllers(){
-        
         
         
         guard let path = Bundle.main.path(forResource: "MainVCSettings.json", ofType: nil) else {
@@ -55,7 +41,7 @@ class MainViewController: UITabBarController {
                 let name = dict["vcName"]
                 let title = dict["title"]
                 let imageName = dict["imageName"]
-
+                
                 addChildViewController(name, title: title, imageName: imageName)
             }
         } catch  {
@@ -64,13 +50,15 @@ class MainViewController: UITabBarController {
             
             addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
             
+            addChildViewController("ComposeViewController", title: "", imageName: "tabbar_compose_icon_add")
+            
             addChildViewController("DiscoverTableViewController", title: "发现", imageName: "tabbar_discover")
             
             addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
         }
         
         
-      
+        
         
         tabBar.tintColor = UIColor.orange
         
@@ -78,7 +66,7 @@ class MainViewController: UITabBarController {
     
     // 方法重载
     func addChildViewController(_ vc: String?, title: String?, imageName: String?) {
-      
+        
         guard let name = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else{
             
             return
@@ -86,50 +74,65 @@ class MainViewController: UITabBarController {
         
         var cls: AnyClass? = nil
         if let vcName = vc {
-           cls = NSClassFromString(name+"."+vcName)
+            cls = NSClassFromString(name+"."+vcName)
         }
         
-
         
-        guard let typeCls = cls as? UITableViewController.Type else{
-            
-            return
-        }
         
-        //2.设置子控制器属性
+        if let typeCls = cls as? UITableViewController.Type {
+            //2.设置子控制器属性
             let chiledVc = typeCls.init()
             chiledVc.tabBarItem.title = title
-        
+            
             if let imageName = imageName {
                 chiledVc.tabBarItem.image = UIImage(named: imageName)
                 chiledVc.tabBarItem.selectedImage = UIImage(named: imageName+"_highlighted")
             }
-        
-        
+            
             let nav = UINavigationController(rootViewController: chiledVc)
             chiledVc.navigationItem.title = title
             //3.添加到自控制器
             addChildViewController(nav)
+            
+        }else if let typeCls = cls as? UIViewController.Type{
+            //2.设置子控制器属性
+            let chiledVc = typeCls.init()
+            chiledVc.tabBarItem.isEnabled = false
+            
+            tabBar.addSubview(composeBtn)
+            composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add"), for:.normal)
+            composeBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: .normal)
+            composeBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: .highlighted)
+            
+            composeBtn.sizeToFit()
+            composeBtn.center = CGPoint(x: tabBar.frame.size.width*0.5, y: tabBar.frame.size.height*0.5)
+            
+            addChildViewController(chiledVc)
+            composeBtn.addTarget(self, action: #selector(composeClick(_:)), for: .touchUpInside)
+            
+        }
         
-          
-        
-        
-
     }
+    
+    @objc func composeClick(_ btn: UIButton){
+        print("点击了打印 \(btn)")
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

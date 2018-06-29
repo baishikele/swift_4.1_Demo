@@ -16,6 +16,8 @@
 		14FB3B9B20E3C2DE00914D5D /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3B9A20E3C2DE00914D5D /* MessageTableViewController.swift */; };
 		14FB3B9D20E3C2EA00914D5D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3B9C20E3C2EA00914D5D /* ProfileTableViewController.swift */; };
 		14FB3B9F20E451DF00914D5D /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 14FB3B9E20E451DF00914D5D /* MainVCSettings.json */; };
+		14FB3BA320E5FCEB00914D5D /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3BA220E5FCEB00914D5D /* ComposeViewController.swift */; };
+		14FB3BA520E5FD0D00914D5D /* UIButton-extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3BA420E5FD0D00914D5D /* UIButton-extenstion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		14FB3B9A20E3C2DE00914D5D /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		14FB3B9C20E3C2EA00914D5D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		14FB3B9E20E451DF00914D5D /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		14FB3BA220E5FCEB00914D5D /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comp\U0010o\U0010seViewController.swift"; sourceTree = "<group>"; };
+		14FB3BA420E5FD0D00914D5D /* UIButton-extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton-extenstion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		14FB3B8D20E3B84F00914D5D /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				14FB3BA220E5FCEB00914D5D /* ComposeViewController.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 		14FB3B9320E3B84F00914D5D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				14FB3BA420E5FD0D00914D5D /* UIButton-extenstion.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -213,7 +219,9 @@
 			files = (
 				14FB3B9D20E3C2EA00914D5D /* ProfileTableViewController.swift in Sources */,
 				14FB3B9720E3BEA900914D5D /* HomeTableViewController.swift in Sources */,
+				14FB3BA320E5FCEB00914D5D /* ComposeViewController.swift in Sources */,
 				14FB3B9520E3B88800914D5D /* MainViewController.swift in Sources */,
+				14FB3BA520E5FD0D00914D5D /* UIButton-extenstion.swift in Sources */,
 				14FB3B9B20E3C2DE00914D5D /* MessageTableViewController.swift in Sources */,
 				14FB3B9920E3C2C900914D5D /* DiscoverTableViewController.swift in Sources */,
 				14FB3B7B20E3B6D900914D5D /* AppDelegate.swift in Sources */,
