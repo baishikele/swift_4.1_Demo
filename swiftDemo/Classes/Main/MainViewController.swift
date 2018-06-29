@@ -10,7 +10,10 @@ import UIKit
 
 class MainViewController: UITabBarController {
     
-    lazy var composeBtn: UIButton = UIButton()
+    lazy var composeBtn: UIButton = UIButton(image: "tabbar_compose_icon_add",
+                                             highlightedImage: "tabbar_compose_icon_add_highlighted",
+                                             backImage: "tabbar_compose_button",
+                                             highlightedBackImage: "tabbar_compose_button_highlighted")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,11 +103,7 @@ class MainViewController: UITabBarController {
             chiledVc.tabBarItem.isEnabled = false
             
             tabBar.addSubview(composeBtn)
-            composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add"), for:.normal)
-            composeBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: .normal)
-            composeBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: .highlighted)
-            
-            composeBtn.sizeToFit()
+       
             composeBtn.center = CGPoint(x: tabBar.frame.size.width*0.5, y: tabBar.frame.size.height*0.5)
             
             addChildViewController(chiledVc)
