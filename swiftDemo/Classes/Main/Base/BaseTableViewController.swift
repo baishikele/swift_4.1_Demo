@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
 
-    var isLogin = false
+    var isLogin = true
     var vistorView = noLoginView.noLoginView()
     
 
