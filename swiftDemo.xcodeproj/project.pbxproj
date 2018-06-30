@@ -23,6 +23,8 @@
 		14FB3BB220E607E600914D5D /* noLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FB3BAF20E607E600914D5D /* noLoginView.xib */; };
 		14FB3BB420E6357D00914D5D /* UIBarButtonItem-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3BB320E6357D00914D5D /* UIBarButtonItem-extension.swift */; };
 		14FB3BB620E63DC500914D5D /* TitleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3BB520E63DC500914D5D /* TitleBtn.swift */; };
+		14FB3BBA20E7002E00914D5D /* UIPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3BB820E7002E00914D5D /* UIPopoverViewController.swift */; };
+		14FB3BBB20E7002E00914D5D /* UIPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FB3BB920E7002E00914D5D /* UIPopoverViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		14FB3BAF20E607E600914D5D /* noLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noLoginView.xib; sourceTree = "<group>"; };
 		14FB3BB320E6357D00914D5D /* UIBarButtonItem-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-extension.swift"; sourceTree = "<group>"; };
 		14FB3BB520E63DC500914D5D /* TitleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBtn.swift; sourceTree = "<group>"; };
+		14FB3BB820E7002E00914D5D /* UIPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPopoverViewController.swift; sourceTree = "<group>"; };
+		14FB3BB920E7002E00914D5D /* UIPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIPopoverViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 		14FB3B8F20E3B84F00914D5D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				14FB3BB720E7001400914D5D /* UIPopover */,
 				14FB3B9620E3BEA900914D5D /* HomeTableViewController.swift */,
 			);
 			path = Home;
@@ -167,6 +172,15 @@
 				14FB3BAF20E607E600914D5D /* noLoginView.xib */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		14FB3BB720E7001400914D5D /* UIPopover */ = {
+			isa = PBXGroup;
+			children = (
+				14FB3BB820E7002E00914D5D /* UIPopoverViewController.swift */,
+				14FB3BB920E7002E00914D5D /* UIPopoverViewController.xib */,
+			);
+			path = UIPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +245,7 @@
 				14FB3BB220E607E600914D5D /* noLoginView.xib in Resources */,
 				14FB3B8220E3B70000914D5D /* Assets.xcassets in Resources */,
 				14FB3B9F20E451DF00914D5D /* MainVCSettings.json in Resources */,
+				14FB3BBB20E7002E00914D5D /* UIPopoverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +259,7 @@
 				14FB3BB020E607E600914D5D /* BaseTableViewController.swift in Sources */,
 				14FB3B9D20E3C2EA00914D5D /* ProfileTableViewController.swift in Sources */,
 				14FB3B9720E3BEA900914D5D /* HomeTableViewController.swift in Sources */,
+				14FB3BBA20E7002E00914D5D /* UIPopoverViewController.swift in Sources */,
 				14FB3BB620E63DC500914D5D /* TitleBtn.swift in Sources */,
 				14FB3BA320E5FCEB00914D5D /* ComposeViewController.swift in Sources */,
 				14FB3B9520E3B88800914D5D /* MainViewController.swift in Sources */,
