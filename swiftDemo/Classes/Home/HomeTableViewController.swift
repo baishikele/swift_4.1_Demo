@@ -10,7 +10,8 @@ import UIKit
 
 class HomeTableViewController: BaseTableViewController {
 
-   lazy var titleBtn: TitleBtn = TitleBtn()
+    lazy var isPresented: Bool = false
+    lazy var titleBtn: TitleBtn = TitleBtn()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,9 +71,14 @@ extension HomeTableViewController: UIViewControllerTransitioningDelegate {
         
     }
     
-  // 目的：设置弹出视图动画，调用这个函数，就是自定义动画，系统不会帮助完成动画，需要自己完成
+  // 目的：设置[弹出]视图动画，调用这个函数，就是自定义动画，系统不会帮助完成动画，需要自己完成
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {// 返回的是一个遵循协议的对象，即返回self，self遵循协议
         return self// self要遵循代理
+    }
+    
+    // 目的，设置[消失动画]
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+       return self
     }
 }
 
@@ -88,7 +94,17 @@ extension HomeTableViewController: UIViewControllerAnimatedTransitioning {
     // 添加动画
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning){
 
-        
+        if isPresented == false {
+            isPresented = true
+            presentTransition(transitionContext: transitionContext)
+        }else{
+            isPresented = false
+            disssTransiton(transitionContext: transitionContext)
+        }
+      
+    }
+    
+    func presentTransition(transitionContext: UIViewControllerContextTransitioning) -> () {
         // 1、获取动画view
         //UITransitionContextFromViewKey
         //UITransitionContextToViewKey
@@ -108,6 +124,27 @@ extension HomeTableViewController: UIViewControllerAnimatedTransitioning {
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             presentView.layer.transform = CATransform3DIdentity
         }) { (_) in
+            transitionContext.completeTransition(true)
+        }
+    }
+    
+    func disssTransiton(transitionContext: UIViewControllerContextTransitioning) -> () {
+        // 1、获取动画view
+        //UITransitionContextFromViewKey
+        //UITransitionContextToViewKey
+        //let presentView = transitionContext.viewForKey(UITransitionContextToViewKey)  这个是swift2的写法
+        guard let presentView = transitionContext.view(forKey: UITransitionContextViewKey.from) else{
+            
+            return
+        }
+        
+        // 2.执行动画
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+
+            presentView.layer.transform = CATransform3DMakeScale(1, 0.0001, 1)
+
+        }) { (_) in
+            presentView.removeFromSuperview()
             transitionContext.completeTransition(true)
         }
     }
