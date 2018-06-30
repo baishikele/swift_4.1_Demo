@@ -10,10 +10,13 @@ import UIKit
 
 class THUIPresentationController: UIPresentationController {
 
+    
+    lazy var popoverFrame : CGRect = CGRect.zero
+    
     override func containerViewWillLayoutSubviews() {
         
         // 修改presentedView frame
-        presentedViewController.view.frame = CGRect(x: (presentedView?.frame.size.width)!/2-100, y: 55, width: 200, height: 300)
+        presentedViewController.view.frame = popoverFrame
         
         // 设置蒙版
         setupCover()

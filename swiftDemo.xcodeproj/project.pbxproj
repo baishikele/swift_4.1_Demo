@@ -26,6 +26,7 @@
 		14FB3BBA20E7002E00914D5D /* UIPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3BB820E7002E00914D5D /* UIPopoverViewController.swift */; };
 		14FB3BBB20E7002E00914D5D /* UIPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FB3BB920E7002E00914D5D /* UIPopoverViewController.xib */; };
 		14FB3BBD20E714F400914D5D /* THUIPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3BBC20E714F400914D5D /* THUIPresentationController.swift */; };
+		14FB3BBF20E76D8000914D5D /* PopoverAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FB3BBE20E76D8000914D5D /* PopoverAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		14FB3BB820E7002E00914D5D /* UIPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPopoverViewController.swift; sourceTree = "<group>"; };
 		14FB3BB920E7002E00914D5D /* UIPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIPopoverViewController.xib; sourceTree = "<group>"; };
 		14FB3BBC20E714F400914D5D /* THUIPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THUIPresentationController.swift; sourceTree = "<group>"; };
+		14FB3BBE20E76D8000914D5D /* PopoverAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				14FB3BB820E7002E00914D5D /* UIPopoverViewController.swift */,
 				14FB3BB920E7002E00914D5D /* UIPopoverViewController.xib */,
 				14FB3BBC20E714F400914D5D /* THUIPresentationController.swift */,
+				14FB3BBE20E76D8000914D5D /* PopoverAnimationView.swift */,
 			);
 			path = UIPopover;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				14FB3BB020E607E600914D5D /* BaseTableViewController.swift in Sources */,
 				14FB3B9D20E3C2EA00914D5D /* ProfileTableViewController.swift in Sources */,
 				14FB3B9720E3BEA900914D5D /* HomeTableViewController.swift in Sources */,
+				14FB3BBF20E76D8000914D5D /* PopoverAnimationView.swift in Sources */,
 				14FB3BBA20E7002E00914D5D /* UIPopoverViewController.swift in Sources */,
 				14FB3BB620E63DC500914D5D /* TitleBtn.swift in Sources */,
 				14FB3BA320E5FCEB00914D5D /* ComposeViewController.swift in Sources */,
